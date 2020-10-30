@@ -1,3 +1,34 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@Nihosijie 
+Nihosijie
+/
+jd-base
+forked from EvineDeng/jd-base
+0
+018
+Code
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+jd-base/first_run.sh
+@EvineDeng
+EvineDeng 完善首次运行时排除一些不必要的脚本复制。
+Latest commit fefa1fa 8 days ago
+ History
+ 1 contributor
+Executable File  79 lines (64 sloc)  1.56 KB
+  
 #!/bin/sh
 
 ## 修改日期：2020-10-17
@@ -19,7 +50,7 @@ then
   echo "${ScriptsDir} 目录不存在，开始克隆..."
   echo
   cd ${RootDir}
-  git clone https://github.com/lxk0301/scripts
+  git clone https://gitee.com/lxk0301/scripts
   echo
 else
   echo "${ScriptsDir} 目录已存在，跳过克隆..."
@@ -32,7 +63,7 @@ then
   echo "${ShellDir} 目录不存在，开始克隆..."
   echo
   cd ${RootDir}
-  git clone https://github.com/EvineDeng/jd-base shell
+  git clone https://gitee.com/nihosijie/jd-base shell
   echo
 else
   echo "${ShellDir} 目录已存在，跳过克隆..."
@@ -77,3 +108,15 @@ else
   echo
 fi
 
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
