@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@Nihosijie 
-Nihosijie
-/
-jd-base
-forked from EvineDeng/jd-base
-0
-018
-Code
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-jd-base/first_run.sh
-@EvineDeng
-EvineDeng 完善首次运行时排除一些不必要的脚本复制。
-Latest commit fefa1fa 8 days ago
- History
- 1 contributor
-Executable File  79 lines (64 sloc)  1.56 KB
-  
 #!/bin/sh
 
 ## 修改日期：2020-10-17
@@ -38,7 +7,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 export LC_ALL=C
 
 
-RootDir=$(cd $(dirname $0); pwd)
+RootDir="/root"
 ShellDir="${RootDir}/shell"
 LogDir="${RootDir}/log"
 ScriptsDir="${RootDir}/scripts"
@@ -72,7 +41,7 @@ fi
 
 
 if [ -d ${ScriptsDir}/.github/workflows ]; then
-  List=$(ls ${ScriptsDir}/.github/workflows/ | grep -E "jd_.+\.yml" | sed "s/\.yml//")
+  List=$(ls ${ScriptsDir}/.github/workflows | sed "s|\.yml||" | sed "/sync/d")
 fi
 
 
@@ -99,7 +68,6 @@ then
   if [ -n "$List" ]; then
     for i in $List; do
       cp -fv "${ShellDir}/jd.sh.sample" "${ShellDir}/$i.sh"
-	  chmod +x "${ShellDir}/$i.sh"
       echo
 	done
   fi
@@ -108,15 +76,4 @@ else
   echo
 fi
 
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+chmod +x /root/shell/jd_*.sh
